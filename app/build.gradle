@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.eluleci.bux"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "REST_SERVICE_URL", '"https://api.beta.getbux.com/core/16/"'
+            buildConfigField "String", "WS_SERVICE_URL", '"https://rtf.beta.getbux.com/subscriptions/me"'
+            buildConfigField "String", "JWT_TOKEN", '"eyJhbGciOiJIUzI1NiJ9.eyJyZWZyZXNoYWJsZSI6ZmFsc2UsInN1YiI6ImJiMGNkYTJiLWExMGUtNGVkMy1hZDVhLTBmODJiNGMxNTJjNCIsImF1ZCI6ImJldGEuZ2V0YnV4LmNvbSIsInNjcCI6WyJhcHA6bG9naW4iLCJydGY6bG9naW4iXSwiZXhwIjoxODIwODQ5Mjc5LCJpYXQiOjE1MDU0ODkyNzksImp0aSI6ImI3MzlmYjgwLTM1NzUtNGIwMS04NzUxLTMzZDFhNGRjOGY5MiIsImNpZCI6Ijg0NzM2MjI5MzkifQ.M5oANIi2nBtSfIfhyUMqJnex-JYg6Sm92KPYaUL9GKg"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            // TODO replace the values with the ones suitable with the production environment
+            buildConfigField "String", "REST_SERVICE_URL", '"https://api.beta.getbux.com/core/16/"'
+            buildConfigField "String", "WS_SERVICE_URL", '"https://rtf.beta.getbux.com/subscriptions/me"'
+            buildConfigField "String", "JWT_TOKEN", '"eyJhbGciOiJIUzI1NiJ9.eyJyZWZyZXNoYWJsZSI6ZmFsc2UsInN1YiI6ImJiMGNkYTJiLWExMGUtNGVkMy1hZDVhLTBmODJiNGMxNTJjNCIsImF1ZCI6ImJldGEuZ2V0YnV4LmNvbSIsInNjcCI6WyJhcHA6bG9naW4iLCJydGY6bG9naW4iXSwiZXhwIjoxODIwODQ5Mjc5LCJpYXQiOjE1MDU0ODkyNzksImp0aSI6ImI3MzlmYjgwLTM1NzUtNGIwMS04NzUxLTMzZDFhNGRjOGY5MiIsImNpZCI6Ijg0NzM2MjI5MzkifQ.M5oANIi2nBtSfIfhyUMqJnex-JYg6Sm92KPYaUL9GKg"'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$rootProject.kotlin_version"
+    implementation "com.google.guava:guava:$rootProject.guava_version"
+
+    implementation "com.android.support:design:$rootProject.support_version"
+    implementation "com.android.support:appcompat-v7:$rootProject.support_version"
+    implementation "com.android.support:recyclerview-v7:$rootProject.support_version"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraint_layout_version"
+
+    implementation "com.google.code.gson:gson:$rootProject.gson_version"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_logging_version"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxkotlin_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid_version"
+
+    provided "org.glassfish:javax.annotation:$rootProject.javax_annotation_version"
+    implementation "com.google.dagger:dagger:$rootProject.dagger_version"
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger_version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
+
+    testImplementation "junit:junit:$rootProject.junit_version"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.test_runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso_version"
+}

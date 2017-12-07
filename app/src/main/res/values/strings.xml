@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Bux</string>
+
+    <!-- common actions -->
+    <string name="action_retry">Retry</string>
+
+    <!-- error -->
+    <string name="error_title">Error</string>
+    <string name="error_unexpected_message">Unexpected error occurred.</string>
+    <string name="error_auth_message">Your authentication seems problematic. Start a new session and try again.</string>
+    <string name="error_network_message">Cannot connect to server. Please check your internet connection.</string>
+
+    <!-- product list page -->
+    <string name="plp_loading_list_error_message">Loading product list failed.</string>
+
+    <!-- product detail -->
+    <string name="pd_current_price">Current Price:</string>
+    <string name="pd_closing_price">Closing Price:</string>
+    <string name="pd_market_status">Market Status: </string>
+    <string name="pd_market_status_open">OPEN</string>
+    <string name="pd_market_status_closed">CLOSED</string>
+    <string name="pd_market_account_value">Account value:</string>
+    <string name="pd_market_performance">Performance:</string>
+    <string name="pd_market_suggest_funding">Should fund:</string>
+    <string name="pd_market_suggest_funding_yes">YES</string>
+    <string name="pd_market_suggest_funding_no">NO</string>
+    <string name="pd_error_live_stream_not_working">Cannot get live data. Check your connection.</string>
+
+</resources>
